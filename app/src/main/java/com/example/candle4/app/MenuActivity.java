@@ -20,11 +20,20 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.domain.TOCReference;
+import nl.siegmann.epublib.epub.EpubReader;
+
 
 /**
  * Activity showing the options menu.
@@ -48,6 +57,7 @@ public class MenuActivity extends Activity {
             // Do nothing.
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
